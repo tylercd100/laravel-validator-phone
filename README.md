@@ -7,6 +7,8 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187)
 [![Total Downloads](https://img.shields.io/packagist/dt/tylercd100/laravel-validator-phone.svg?style=flat-square)](https://packagist.org/packages/tylercd100/laravel-validator-phone)
 
+This package only checks phone number formatting and not actual number validity
+
 ## Installation
 
 Install via [composer](https://getcomposer.org/) - In the terminal:
@@ -22,17 +24,5 @@ Tylercd100\Validator\Phone\ServiceProvider::class
 ## Usage
 
 ```php
-// Test any color type
-Validator::make(['test' => '5556667777'], ['test' => 'phone']);
-
-// Test for rgb 
-Validator::make(['test' => 'rgb(0, 200, 150)'], ['test' => 'color_rgb']);
-
-// Test for rgba 
-Validator::make(['test' => 'rgba(0, 200, 150, 0.52)'], ['test' => 'color_rgba']);
-
-// Test for hex 
-Validator::make(['test' => '#333'], ['test' => 'color_hex']);
-
-// Test for css color keyword 
-Validator::make(['test' => 'gold'], ['test' => 'color_keyword']);
+// Test any phone number
+Validator::make(['test' => '+15556667777'], ['test' => 'phone']);
