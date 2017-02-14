@@ -13,18 +13,23 @@ class ValidatorTest extends TestCase
         $this->assertInstanceOf(PhoneValidator::class, $obj);
     }
 
-    protected function validate($color, $rule = 'phone'){
+    protected function validate($color, $rule = 'phone')
+    {
         return !(Validator::make(['test' => $color], ['test' => $rule])->fails());
     }
 
-    // public function testValidatorPhone()
-    // {
-    //     $this->assertEquals(true, $this->validate('+15556667777', 'phone'));
-    // }
+    public function testValidatorPhone()
+    {
+        $this->assertEquals(true, $this->validate('+15556667777', 'phone'));
+    }
 
     public function testValidatorPhoneE164()
     {
         $this->assertEquals(true, $this->validate('+15556667777', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('+1555 ex 1234', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('+155566677775556667777', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('+1555', 'phone:E164'));
         $this->assertEquals(false, $this->validate('5556667777', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('+1(555)666-7777', 'phone:E164'));
     }
 }

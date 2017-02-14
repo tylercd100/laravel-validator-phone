@@ -1,13 +1,13 @@
 {
-    "name": "tylercd100/laravel-validator-e164",
-    "description": "Validate that a phone number is in E164 format",
+    "name": "tylercd100/laravel-validator-phone",
+    "description": "Validate that a phone number is in the correct format",
     "keywords": [
         "laravel",
         "validator",
-        "e164",
+        "phone",
         "tylercd100"
     ],
-    "homepage": "https://github.com/tylercd100/laravel-validator-e164",
+    "homepage": "https://github.com/tylercd100/laravel-validator-phone",
     "license": "MIT",  
     "authors": [
         {
@@ -17,12 +17,12 @@
     ],
     "autoload":{
         "psr-4":{
-            "Tylercd100\\Validator\\E164\\":"src/"
+            "Tylercd100\\Validator\\Phone\\":"src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tylercd100\\Validator\\E164\\Tests\\": "tests/"
+            "Tylercd100\\Validator\\Phone\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable",  

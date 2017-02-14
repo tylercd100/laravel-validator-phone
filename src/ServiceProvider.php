@@ -29,9 +29,17 @@ class ServiceProvider extends IlluminateProvider
             $x = new Validator();
 
             $factory->extend('phone', function ($attribute, $value, $parameters, $validator) use ($x) {
-                var_dump([$attribute, $value, $parameters]);
-                die();
-                return $x->isE164($value);
+                if (count($parameters) > 0) {
+                    switch ($parameters[0]) {
+                        case 'e164':
+                        case 'E164':
+                            return $x->isE164($value);
+                        default:
+                            return $x->isPhone($value);
+                    }
+                } else {
+                    return $x->isPhone($value);
+                }
             });
         });
     }

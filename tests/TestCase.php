@@ -1,6 +1,6 @@
 <?php
 
-namespace Tylercd100\Validator\E164\Tests;
+namespace Tylercd100\Validator\Phone\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -24,7 +24,7 @@ class TestCase extends Orchestra
      */
     protected function getPackageProviders($app)
     {
-        return ['Tylercd100\Validator\E164\Providers\ServiceProvider'];
+        return ['Tylercd100\Validator\Phone\ServiceProvider'];
     }
 
     /**
