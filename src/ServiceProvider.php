@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateProvider
                 } else {
                     return $x->isPhone($value);
                 }
-            });
+            }, "Not a valid phone number");
         });
     }
 }
