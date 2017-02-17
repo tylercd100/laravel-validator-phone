@@ -4,12 +4,17 @@ namespace Tylercd100\Validator\Phone;
 
 class Validator
 {
-    public function isPhone($value)
+    public function __call($a, $b)
+    {
+        return empty($b[0]) || $this->{$a}($b[0]);
+    }
+
+    protected function isPhone($value)
     {
         return $this->isE164($value);
     }
 
-    public function isE164($value)
+    protected function isE164($value)
     {
         $conditions = [];
         $conditions[] = strpos($value, "+") === 0;

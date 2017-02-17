@@ -23,6 +23,14 @@ class ValidatorTest extends TestCase
         $this->assertEquals(true, $this->validate('+15556667777', 'phone'));
     }
 
+    public function testValidatorWithEmpty()
+    {
+        $this->assertEquals(true, $this->validate('', 'phone'));
+        $this->assertEquals(true, $this->validate(null, 'phone'));
+        $this->assertEquals(true, $this->validate([], 'phone'));
+        $this->assertEquals(true, $this->validate(false, 'phone'));
+    }
+
     public function testValidatorPhoneE164()
     {
         $this->assertEquals(true, $this->validate('+15556660000', 'phone:E164'));
