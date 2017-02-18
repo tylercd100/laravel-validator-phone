@@ -8,7 +8,6 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/tylercd100/laravel-validator-phone.svg?style=flat-square)](https://packagist.org/packages/tylercd100/laravel-validator-phone)
 
 This package only checks phone number formatting and not actual number validity.
-Currently only E164 formatting is supported
 
 ## Installation
 
