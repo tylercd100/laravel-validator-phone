@@ -1,4 +1,4 @@
-# Validate colors with Laravel 5
+# Validate phone numbers with Laravel 5
 [![Latest Version](https://img.shields.io/github/release/tylercd100/laravel-validator-phone.svg?style=flat-square)](https://github.com/tylercd100/laravel-validator-phone/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://travis-ci.org/tylercd100/laravel-validator-phone.svg?branch=master)](https://travis-ci.org/tylercd100/laravel-validator-phone)
