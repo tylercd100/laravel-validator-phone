@@ -2,6 +2,7 @@
 
 namespace Tylercd100\Validator\Phone;
 
+use Exception;
 use Illuminate\Support\ServiceProvider as IlluminateProvider;
 use Tylercd100\Validator\Phone\Validator;
 
@@ -38,7 +39,7 @@ class ServiceProvider extends IlluminateProvider
                         case 'NANP':
                             return $x->isNANP($value);
                         default:
-                            return $x->isPhone($value);
+                            throw new Exception($parameters[0]." is not a supported phone validation type.", 1);
                     }
                 } else {
                     return $x->isPhone($value);

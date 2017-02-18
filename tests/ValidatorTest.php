@@ -2,8 +2,9 @@
 
 namespace Tylercd100\Validator\Phone\Tests;
 
-use Validator;
+use Exception;
 use Tylercd100\Validator\Phone\Validator as PhoneValidator;
+use Validator;
 
 class ValidatorTest extends TestCase
 {
@@ -16,6 +17,12 @@ class ValidatorTest extends TestCase
     protected function validate($number, $rule = 'phone')
     {
         return !(Validator::make(['attr' => $number], ['attr' => $rule])->fails());
+    }
+
+    public function testUnsupportedValidationTypes()
+    {
+        $this->setExpectedException(Exception::class);
+        $this->validate('+15556660000', 'phone:unsupportedtype');
     }
 
     public function testValidatorPhone()

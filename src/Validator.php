@@ -12,8 +12,8 @@ class Validator
     /**
      * Checks through all validation methods to verify it is in a
      * phone number format of some type
-     * @param  [type]  $value [description]
-     * @return boolean        [description]
+     * @param  string  $value The phone number to check
+     * @return boolean        is it correct format?
      */
     protected function isPhone($value)
     {
@@ -43,6 +43,7 @@ class Validator
      */
     protected function isNANP($value)
     {
+        $conditions = [];
         $conditions[] = preg_match("/^(?:\+1|1)?\s?-?\(?\d{3}\)?(\s|-)?\d{3}-\d{4}$/i", $value) > 0;
         return (bool) array_product($conditions);
     }
