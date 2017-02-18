@@ -41,6 +41,8 @@ class ValidatorTest extends TestCase
         $this->assertEquals(false, $this->validate('+1 (555) 666-7777', 'phone:E164'));
         $this->assertEquals(false, $this->validate('+1(555)666-7777', 'phone:E164'));
         $this->assertEquals(false, $this->validate('(555) 666-7777', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('(abc) def-ghij', 'phone:E164'));
+        $this->assertEquals(false, $this->validate('+zabcdefghij', 'phone:E164'));
     }
 
     public function testValidatorPhoneNANP()
@@ -65,6 +67,8 @@ class ValidatorTest extends TestCase
         $this->assertEquals(false, $this->validate('+155566677775556667777', 'phone:NANP'));
         $this->assertEquals(false, $this->validate('+1555', 'phone:NANP'));
         $this->assertEquals(false, $this->validate('5556667777', 'phone:NANP'));
+        $this->assertEquals(false, $this->validate('(abc) def-ghij', 'phone:NANP'));
+        $this->assertEquals(false, $this->validate('+zabcdefghij', 'phone:NANP'));
     }
 
     public function testValidatorErrorMessage()
