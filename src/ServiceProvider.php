@@ -34,6 +34,9 @@ class ServiceProvider extends IlluminateProvider
                         case 'e164':
                         case 'E164':
                             return $x->isE164($value);
+                        case 'nanp':
+                        case 'NANP':
+                            return $x->isNANP($value);
                         default:
                             return $x->isPhone($value);
                     }

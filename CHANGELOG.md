@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-validator-phone` will be documented in this file.
 
+### 1.2.0
+- Added validation option for NANP numbers
+
 ### 1.1.1
 - Empty values are now valid phone numbers (You should be using the 'required' validation rule when checking for non empty values)
 
