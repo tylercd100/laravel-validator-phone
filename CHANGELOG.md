@@ -2,6 +2,9 @@
 
 All notable changes to `laravel-validator-phone` will be documented in this file.
 
+### 1.3.0
+- Added validation option for phone numbers with only digits
+
 ### 1.2.0
 - Added validation option for NANP numbers
 
