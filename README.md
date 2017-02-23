@@ -25,6 +25,7 @@ Tylercd100\Validator\Phone\ServiceProvider::class
 
 ```php
 // Test any phone number
+Validator::make(['test' => '15556667777'], ['test' => 'phone']); //true
 Validator::make(['test' => '+15556667777'], ['test' => 'phone']); //true
 Validator::make(['test' => '+1 (555) 666-7777'], ['test' => 'phone']); //true
 
@@ -33,4 +34,7 @@ Validator::make(['test' => '+15556667777'], ['test' => 'phone:E164']); //true
 
 // Test for NANP (North American Numbering Plan)
 Validator::make(['test' => '+1 (555) 666-7777'], ['test' => 'phone:NANP']); //true
+
+// Test for digits only
+Validator::make(['test' => '15556667777'], ['test' => 'phone:digits']); //true
 ```

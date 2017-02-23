@@ -28,6 +28,8 @@ class ValidatorTest extends TestCase
     public function testValidatorPhone()
     {
         $this->assertEquals(true, $this->validate('+15556667777', 'phone'));
+        $this->assertEquals(true, $this->validate('(555) 666-7777', 'phone'));
+        $this->assertEquals(true, $this->validate('5556667777', 'phone'));
     }
 
     public function testValidatorWithEmpty()
@@ -38,9 +40,19 @@ class ValidatorTest extends TestCase
         $this->assertEquals(true, $this->validate(false, 'phone'));
     }
 
+    public function testValidatorPhoneDigits()
+    {
+        $this->assertEquals(false, $this->validate('+15556667777', 'phone:digits'));
+        $this->assertEquals(false, $this->validate('(555) 666-7777', 'phone:digits'));
+        $this->assertEquals(true, $this->validate('5556667777', 'phone:digits'));
+        $this->assertEquals(true, $this->validate('15556667777', 'phone:digits'));
+    }
+
     public function testValidatorPhoneE164()
     {
         $this->assertEquals(true, $this->validate('+15556660000', 'phone:E164'));
+        $this->assertEquals(true, $this->validate('+556660000', 'phone:E164'));
+        $this->assertEquals(true, $this->validate('+155555556660000', 'phone:E164'));
         $this->assertEquals(false, $this->validate('+1555 ex 1234', 'phone:E164'));
         $this->assertEquals(false, $this->validate('+155566677775556667777', 'phone:E164'));
         $this->assertEquals(false, $this->validate('+1555', 'phone:E164'));

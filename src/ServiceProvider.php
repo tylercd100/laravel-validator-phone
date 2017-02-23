@@ -32,6 +32,8 @@ class ServiceProvider extends IlluminateProvider
             $factory->extend('phone', function ($attribute, $value, $parameters, $validator) use ($x) {
                 if (count($parameters) > 0) {
                     switch ($parameters[0]) {
+                        case 'digits':
+                            return $x->isDigits($value);
                         case 'e164':
                         case 'E164':
                             return $x->isE164($value);

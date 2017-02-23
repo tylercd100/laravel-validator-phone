@@ -17,7 +17,21 @@ class Validator
      */
     protected function isPhone($value)
     {
-        return $this->isE164($value) || $this->isNANP($value);
+        return $this->isE164($value) || $this->isNANP($value) || $this->isDigits($value);
+    }
+
+    /**
+     * Format example 5555555555, 15555555555
+     * @param  [type]  $value [description]
+     * @return boolean        [description]
+     */
+    protected function isDigits($value)
+    {
+        $conditions = [];
+        $conditions[] = strlen($value) >= 10;
+        $conditions[] = strlen($value) <= 16;
+        $conditions[] = preg_match("/[^\d]/i", $value) === 0;
+        return (bool) array_product($conditions);
     }
 
     /**
