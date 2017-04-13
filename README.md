@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/tylercd100/laravel-validator-phone.svg?branch=master)](https://travis-ci.org/tylercd100/laravel-validator-phone)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56f3252c35630e0029db0187)
 [![Total Downloads](https://img.shields.io/packagist/dt/tylercd100/laravel-validator-phone.svg?style=flat-square)](https://packagist.org/packages/tylercd100/laravel-validator-phone)
 
 This package only checks phone number formatting and not actual number validity.
