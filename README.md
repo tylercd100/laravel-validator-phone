@@ -6,6 +6,8 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/tylercd100/laravel-validator-phone/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/tylercd100/laravel-validator-phone.svg?style=flat-square)](https://packagist.org/packages/tylercd100/laravel-validator-phone)
 
+**This Package has moved to [here](https://github.com/laravel-validation-rules/phone) for laravel 5.5+. Please use that instead. Also check out these other [community validation rules](https://laravel-validation-rules.github.io/)**
+
 This package only checks phone number formatting and not actual number validity.
 
 ## Installation
